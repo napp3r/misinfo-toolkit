@@ -65,6 +65,20 @@ misinfo evaluate data/splits -o results/mide22
 `prepare` keeps the `True`/`False` labels (False -> 1 = misinformation, True -> 0 = truthful)
 and drops `Other`. `data/processed`, `data/splits` and `models/` are git-ignored.
 
+## Demo app
+
+An optional [Streamlit](https://streamlit.io) app lets you paste a tweet, pick a model and see
+the misinformation score with the detected causal cues highlighted.
+
+```bash
+pip install -e ".[app]"
+streamlit run app/streamlit_app.py
+```
+
+If `models/model.joblib` exists (e.g. trained on MiDe22 with `misinfo train`) the app offers it;
+otherwise the models are trained on the synthetic sample data at start-up. The app can be deployed
+to Streamlit Community Cloud as is (`requirements.txt` installs the package with the `app` extra).
+
 ## CLI reference
 
 | Command | Purpose |
@@ -85,6 +99,7 @@ src/misinfo_toolkit/
   models.py       # model factory, scoring, save/load
   evaluate.py     # metrics, experiment protocol, reports
   cli.py          # `misinfo` command
+app/              # Streamlit demo
 tests/            # pytest suite (unit + end-to-end)
 data/sample/      # synthetic demo dataset
 docs/             # technology choices
