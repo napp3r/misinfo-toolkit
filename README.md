@@ -17,6 +17,27 @@ Machine Learning"* (D. Karatay, IEEE SIST 2026) for the
 * stratified 70/10/20 splits with a fixed seed, evaluation with the *fake* class as positive;
 * a `misinfo` command-line tool and machine-readable reports (JSON, CSV, Markdown, PNG).
 
+## Results on MiDe22 (English)
+
+Binary task (2,456 tweets, 70.4 % misinformation), stratified 70/10/20 split, seed 42,
+test set n = 492, positive class = misinformation. Produced with `misinfo evaluate`
+([results/mide22](results/mide22)); the TF-IDF numbers reproduce the paper exactly.
+
+| Model | Accuracy | Precision (Fake) | Recall (Fake) | F1 (Fake) |
+|---|---|---|---|---|
+| TF-IDF + Logistic Regression | 0.8049 | 0.7990 | **0.9653** | 0.8743 |
+| **TF-IDF + Linear SVM** | **0.8415** | 0.8583 | 0.9277 | **0.8917** |
+| TF-IDF + Causal Cues (LogReg) | 0.8049 | 0.7990 | **0.9653** | 0.8743 |
+| BERT fine-tuned *(paper, not in toolkit)* | 0.8394 | **0.8782** | 0.8960 | 0.8870 |
+| BERT + Causal Cues *(paper, not in toolkit)* | 0.8171 | 0.8699 | 0.8699 | 0.8699 |
+
+The linear SVM matches or beats fine-tuned BERT on accuracy and F1 at a fraction of the cost.
+The 28 binary cue features do not change the logistic regression predictions: they are
+swamped by 5,000 TF-IDF features, which is consistent with the paper's finding that naive
+late fusion of causal cues does not help.
+
+![Test-set metrics](results/mide22/metrics.png)
+
 ## Installation
 
 ```bash

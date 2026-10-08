@@ -1,0 +1,77 @@
+{
+  "logreg": {
+    "model": "Logistic Regression",
+    "val": {
+      "accuracy": 0.8333333333333334,
+      "precision_fake": 0.8113207547169812,
+      "recall_fake": 0.9942196531791907,
+      "f1_fake": 0.8935064935064935
+    },
+    "test": {
+      "accuracy": 0.8048780487804879,
+      "precision_fake": 0.7990430622009569,
+      "recall_fake": 0.9653179190751445,
+      "f1_fake": 0.8743455497382199
+    },
+    "confusion_matrix": [
+      [
+        62,
+        84
+      ],
+      [
+        12,
+        334
+      ]
+    ]
+  },
+  "svm": {
+    "model": "Linear SVM",
+    "val": {
+      "accuracy": 0.8536585365853658,
+      "precision_fake": 0.8586387434554974,
+      "recall_fake": 0.9479768786127167,
+      "f1_fake": 0.9010989010989011
+    },
+    "test": {
+      "accuracy": 0.8414634146341463,
+      "precision_fake": 0.8582887700534759,
+      "recall_fake": 0.9277456647398844,
+      "f1_fake": 0.8916666666666667
+    },
+    "confusion_matrix": [
+      [
+        93,
+        53
+      ],
+      [
+        25,
+        321
+      ]
+    ]
+  },
+  "logreg_cues": {
+    "model": "LogReg + Causal Cues",
+    "val": {
+      "accuracy": 0.8333333333333334,
+      "precision_fake": 0.8113207547169812,
+      "recall_fake": 0.9942196531791907,
+      "f1_fake": 0.8935064935064935
+    },
+    "test": {
+      "accuracy": 0.8048780487804879,
+      "precision_fake": 0.7990430622009569,
+      "recall_fake": 0.9653179190751445,
+      "f1_fake": 0.8743455497382199
+    },
+    "confusion_matrix": [
+      [
+        62,
+        84
+      ],
+      [
+        12,
+        334
+      ]
+    ]
+  }
+}
