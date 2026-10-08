@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "misinfo-toolkit: reproducible tweet-level misinformation detection"
+version: 0.1.0
+date-released: 2026-10-08
+license: MIT
+repository-code: "https://github.com/napp3r/misinfo-toolkit"
+authors:
+  - family-names: Karatay
+    given-names: Dair
+    affiliation: "Astana IT University"
+keywords:
+  - misinformation detection
+  - fake news
+  - Twitter
+  - MiDe22
+references:
+  - type: conference-paper
+    title: "MiDe22: An Annotated Multi-Event Tweet Dataset for Misinformation Detection"
+    authors:
+      - family-names: Toraman
+        given-names: Cagri
+      - family-names: Ozcelik
+        given-names: Oguzhan
+      - family-names: Sahinuc
+        given-names: Furkan
+      - family-names: Can
+        given-names: Fazli
+    conference:
+      name: "LREC-COLING 2024"
+    year: 2024

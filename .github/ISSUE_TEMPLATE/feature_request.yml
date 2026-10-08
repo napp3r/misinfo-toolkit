@@ -1,0 +1,19 @@
+name: Feature request
+description: Suggest a new model, metric, dataset or tool
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Motivation
+      description: Which research question or workflow does this help with?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
