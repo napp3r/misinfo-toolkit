@@ -127,6 +127,19 @@ Every push and pull request runs [`.github/workflows/ci.yml`](.github/workflows/
    results table in the job summary and as an artifact;
 4. **Build** - builds the wheel / sdist and validates them with `twine check`.
 
+## Continuous delivery
+
+Pushing a version tag runs [`.github/workflows/release.yml`](.github/workflows/release.yml):
+it checks that the tag matches the version in `pyproject.toml`, runs the tests, builds the
+wheel and sdist and publishes them as a [GitHub Release](https://github.com/napp3r/misinfo-toolkit/releases).
+
+```bash
+git tag v0.1.0 && git push origin v0.1.0
+```
+
+Dependencies and GitHub Actions versions are kept up to date by
+[Dependabot](.github/dependabot.yml).
+
 ## Technology choices
 
 Python + scikit-learn + pandas, pytest, ruff, GitHub Actions - the rationale for each choice is
